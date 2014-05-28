@@ -1,158 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>Harker Development</title>
-        <style>
-            ::-moz-selection {
-                background: #b3d4fc;
-                text-shadow: none;
-            }
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
 
-            ::selection {
-                background: #b3d4fc;
-                text-shadow: none;
-            }
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-            html {
-                padding: 30px 10px;
-                font-size: 20px;
-                line-height: 1.4;
-                color: #737373;
-                background: #f0f0f0;
-                -webkit-text-size-adjust: 100%;
-                -ms-text-size-adjust: 100%;
-            }
+    <title>Harker Development by HarkerDev</title>
+  </head>
 
-            html,
-            input {
-                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            }
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Harker Development</h1>
+        <h2>Useful utilities for harker students</h2>
+        <a href="https://github.com/HarkerDev" class="button"><small>Follow me on</small>GitHub</a>
+      </div>
+    </header>
 
-            body {
-                max-width: 500px;
-                _width: 500px;
-                padding: 30px 20px 50px;
-                border: 1px solid #b3b3b3;
-                border-radius: 4px;
-                margin: 0 auto;
-                box-shadow: 0 1px 10px #a7a7a7, inset 0 1px 0 #fff;
-                background: #fcfcfc;
-            }
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
+<a name="welcome-to-harker-developments-main-directory" class="anchor" href="#welcome-to-harker-developments-main-directory"><span class="octicon octicon-link"></span></a>Welcome to Harker Development's Main Directory.</h3>
 
-            h1 {
-                margin: 0 10px;
-                font-size: 50px;
-                text-align: center;
-            }
+<p>We're a student-run organization dedicated to developing projects to make Upper School student life easier. A few of our popular projects include <a href="http://www.github.com/harkerdev/bellschedule">the bell schedule web application</a> and <a href="http://www.github.com/harkerdev/pcrchanges">changes to PCR coloring</a>. </p>
 
-            h1 span {
-                color: #bbb;
-            }
+<h3>
+<a name="how-to-contribute" class="anchor" href="#how-to-contribute"><span class="octicon octicon-link"></span></a>How to Contribute</h3>
 
-            h3 {
-                margin: 1.5em 0 0.5em;
-            }
+<p>First, go to the repository (located at <a href="https://www.github.com/harkerdev/">https://www.github.com/harkerdev/</a>)</p>
 
-            p {
-                margin: 1em 0;
-            }
+<h4>
+<a name="tldr" class="anchor" href="#tldr"><span class="octicon octicon-link"></span></a>TL;DR</h4>
 
-            ul {
-                padding: 0 0 0 40px;
-                margin: 1em 0;
-            }
+<ol>
+<li>
+<strong>Check the To Do Section</strong>: choose a pending task that hasn't yet been completed from the issues page and help us add that functionality to the schedule</li>
+<li>
+<strong>Fork this Repository</strong>: fork either the main or development branches to your account</li>
+<li>
+<strong>Make the Changes</strong>: make proposed changes on your fork</li>
+<li>
+<strong>Submit a Pull Request</strong>: submit a pull request, then we'll review the changes and accept them if applicable</li>
+</ol><h4>
+<a name="detailed-guide" class="anchor" href="#detailed-guide"><span class="octicon octicon-link"></span></a>Detailed Guide</h4>
 
-            .container {
-                max-width: 600px;
-                _width: 600px;
-                margin: 0 auto;
-            }
+<ol>
+<li>
+<strong>Fork project</strong> (click upper right "Fork" button)</li>
+<li>
+<strong>Goto your fork</strong>, (lower right, SSH clone url)
+<img src="https://cloud.githubusercontent.com/assets/928812/2546957/26d189f6-b646-11e3-80e5-3659c5e1ed43.png" alt="git clone url">
+</li>
+<li>Open a Terminal. "<strong>git clone</strong>" a local copy off your own fork.
+<code>git clone git@github.com:harkerdev/bellschedule.git</code>
+</li>
+<li>
+<strong>Create a branch</strong>. You can call it anything, for example "fix timer".
+<code>git checkout -b fix_timer</code>
+</li>
+<li>Make your changes to the file(s) in your newly created branch.</li>
+<li>
+<strong>Commit</strong> your changes. <code>git commit -a</code>
+</li>
+<li>
+<strong>Push your branch</strong> to your github repo (which is a fork of HarkerDev/bellschedule).
+<code>git push origin fix_timer</code>
+</li>
+<li>Browse to your github repo and click on the green "<strong>Compare &amp; pull request</strong>"</li>
+<li>After your pull request is accepted you can <strong>delete your branch</strong>. (A grey button will show up in the closed PR. You can get to it from your Github notifications).</li>
+</ol><p>If you mess up, you can delete your branch on Github.
+<code>git push origin :fix_timer</code>
+Then on your local repo, in that same fix_timer branch, you can make your new changes and do a <code>git commit --amend</code> when you are done.
+Then finish with Steps 7 and 8.</p>
 
-            /* google search */
+<p>To keep the master branch of your Github fork (and your local master branch as well) up to date with HarkerDev/bellschedule, do the following:</p>
 
-            #goog-fixurl ul {
-                list-style: none;
-                padding: 0;
-                margin: 0;
-            }
+<pre><code>git remote add HarkerDev https://github.com/HarkerDev/bellschedule.git
+git checkout master
+git pull HarkerDev master
+git push origin master
+</code></pre>
 
-            #goog-fixurl form {
-                margin: 0;
-            }
+<p>So let's assume I had done a clone of <code>HarkerDev/bellschedule</code> a couple weeks ago but since then, there had been changes committed to the master branch. Because of this, both my local repository as well as <strong>my</strong> Github fork of <code>HarkerDev/bellschedule</code> are both lagging behind by a number of commits. Let's catch up (fast-forward) to where the latest commit of <code>HarkerDev/bellschedule</code> is <strong>before</strong> we apply our own changes.</p>
 
-            #goog-wm-qt,
-            #goog-wm-sb {
-                border: 1px solid #bbb;
-                font-size: 16px;
-                line-height: normal;
-                vertical-align: top;
-                color: #444;
-                border-radius: 2px;
-            }
+<p><code>cd bellschedule</code> (go to your local repo)</p>
 
-            #goog-wm-qt {
-                width: 220px;
-                height: 20px;
-                padding: 5px;
-                margin: 5px 10px 0 0;
-                box-shadow: inset 0 1px 1px #ccc;
-            }
+<p><code>git checkout master</code> (make sure you are on master branch)</p>
 
-            #goog-wm-sb {
-                display: inline-block;
-                height: 32px;
-                padding: 0 10px;
-                margin: 5px 0 0;
-                white-space: nowrap;
-                cursor: pointer;
-                background-color: #f5f5f5;
-                background-image: -webkit-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                background-image: -moz-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                background-image: -ms-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                background-image: -o-linear-gradient(rgba(255,255,255,0), #f1f1f1);
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                appearance: none;
-                *overflow: visible;
-                *display: inline;
-                *zoom: 1;
-            }
+<p><code>git pull HarkerDev master</code> (pull changes from vhf and merge them to your local repo)</p>
 
-            #goog-wm-sb:hover,
-            #goog-wm-sb:focus {
-                border-color: #aaa;
-                box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-                background-color: #f8f8f8;
-            }
+<p><code>git push origin master</code> (push our now updated local repo to your github fork so that it is updated as well)</p>
 
-            #goog-wm-qt:hover,
-            #goog-wm-qt:focus {
-                border-color: #105cb6;
-                outline: 0;
-                color: #222;
-            }
+<p>Now that you are completely up to date, you can jump to Step 4 (above). If these steps aren't taken, then Manan Shah (<a href="https://github.com/mananshah99" class="user-mention">@mananshah99</a>) may run into merge conflicts when trying to add your contribution (not as easy as a one click merge, when there's no conflicts).</p>
 
-            input::-moz-focus-inner {
-                padding: 0;
-                border: 0;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Harker Development</h1>
-            <p>You've reached the Harker Development main directory.</p>
-            <p>Check out a few of our popular and useful projects below:</p>
-            <ul>
-                <li><a href="http://harkerdev.github.io/bellschedule">Harker Bell Schedule</a></li>
-                <li><a href="http://github.com/harkerdev/PCRChanges">Fixes to PCR</a></li>
-            </ul>
-			<p>Thanks for visiting!<p>
-            <script>
-                var GOOG_FIXURL_LANG = (navigator.language || '').slice(0,2),GOOG_FIXURL_SITE = location.host;
-            </script>
-            <script src="//linkhelp.clients.google.com/tbproxy/lh/wm/fixurl.js"></script>
-        </div>
-    </body>
+<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+
+<h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<ul>
+<li><a href="http://github.com/iluvredwall">Brian Chan</a></li>
+<li><a href="http://github.com/mananshah99">Manan Shah</a></li>
+<li><a href="http://github.com/andrew-tierno">Andrew Tierno</a></li>
+</ul><h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble? Please contact either Manan Shah (<a href="https://github.com/mananshah99" class="user-mention">@mananshah99</a>) or Andrew Tierno (<a href="https://github.com/andrew-tierno" class="user-mention">@andrew-tierno</a>) for help with your problems. </p>
+        </section>
+
+        <aside id="sidebar">
+
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
 </html>
