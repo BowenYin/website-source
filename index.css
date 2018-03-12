@@ -150,8 +150,8 @@ a.util {
 }
 
 ::selection {
-    background-color: rgba(255, 174, 0, 0.5);
-    text-shadow: rgba(255, 174, 0, 0.5)
+    background-color: rgba(65, 148, 100, 0.5);
+    text-shadow: rgba(21, 112, 40, 0.5)
 }
 
 .faq__question {
@@ -159,7 +159,7 @@ a.util {
 }
 
 .a-smart {
-    background: linear-gradient(#fff, #fff) no-repeat scroll 0px 77%/0.05em 1px, linear-gradient(#fff, #fff) no-repeat scroll 100% 77%/0.05em 1px, linear-gradient(#FFAE00, #FFAE00) repeat-x scroll 0px 77%/1px 1px transparent;
+    background: linear-gradient(#fff, #fff) no-repeat scroll 0px 77%/0.05em 1px, linear-gradient(#fff, #fff) no-repeat scroll 100% 77%/0.05em 1px, linear-gradient(rgb(21, 112, 40), rgb(21, 112, 40)) repeat-x scroll 0px 77%/1px 1px transparent;
     background-repeat: no-repeat, no-repeat, repeat-x;
     text-decoration: none;
     text-shadow: 0.03em 0 #fff, -0.03em 0 #fff, 0 0.03em #fff, 0 -0.03em #fff, 0.06em 0 #fff, -0.06em 0 #fff, 0.09em 0 #fff, -0.09em 0 #fff, 0.12em 0 #fff, -0.12em 0 #fff, 0.15em 0 #fff, -0.15em 0 #fff;
@@ -168,8 +168,8 @@ a.util {
 
 .a-project {
   text-decoration: underline;
-  -webkit-text-decoration-color: rgba(255, 174, 0, 1);
-  text-decoration-color: rgba(255, 174, 0, 1);
+  -webkit-text-decoration-color: rgba(21, 112, 40, 0.5);
+  text-decoration-color: rgba(21, 112, 40, 0.5);
 }
 
 .a-smart:before,
@@ -188,7 +188,7 @@ code {
     background: rgba(0, 0, 0, 0.04);
     border-radius: 3px;
     padding: 0 3px;
-    color: #8D60F5
+    color: rgb(4, 59, 41)
 }
 
 kbd {
@@ -245,9 +245,9 @@ section {
 }
 
 .hero a {
-    color: #8D60F5;
+    color: rgb(5, 71, 30);
     margin-top: 1.5rem;
-    background: linear-gradient(#fff, #fff) no-repeat scroll 0px 82%/0.05em 1px, linear-gradient(#fff, #fff) no-repeat scroll 100% 82%/0.05em 1px, linear-gradient(#8D60F5, #8D60F5) repeat-x scroll 0px 82%/1px 1px transparent;
+    background: linear-gradient(#fff, #fff) no-repeat scroll 0px 82%/0.05em 1px, linear-gradient(#fff, #fff) no-repeat scroll 100% 82%/0.05em 1px, linear-gradient(rgb(5, 71, 30), rgb(5, 71, 30)) repeat-x scroll 0px 82%/1px 1px transparent;
     letter-spacing: -0.5px;
     font-weight: 600;
     font-size: 1rem;
