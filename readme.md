@@ -1,3 +1,3 @@
 # harker-dev
 
-The 2018-2019 Harker Dev website, built on [Hugo](https://gohugo.io/).
+Source code for Harker Dev website, built on [Hugo](https://gohugo.io/).
