@@ -1,0 +1,5 @@
+name = "harkerdev"
+license = "MIT"
+tags = ["personal", "blog"]
+features = ["personal", "blog"]
+min_version = "0.31.1"

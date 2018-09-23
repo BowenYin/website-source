@@ -1,0 +1,19 @@
+baseURL = "harkerdev.github.io/"
+languageCode = "en-us"
+title = "Harker Dev"
+canonifyURLs = true
+
+theme = "harkerdev"
+
+[params]
+    portrait = "img/logo.png"
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Join"
+  url = "/join/"
+  weight = 2

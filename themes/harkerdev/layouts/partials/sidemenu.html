@@ -1,0 +1,32 @@
+<div id="sidebar">
+  {{ if $.Site.Params.portrait }}
+  <a href="/">
+    <img class="logo animated flipInY" src="{{ $.Site.Params.portrait | absURL }}"/>
+  </a>
+  {{ end }}
+
+  <h2>Overview</h2>
+  <ul>
+    {{ range .Site.Menus.main }}
+      <li><a href="{{.URL}}">{{ .Name }}</a></li>
+    {{end}}
+  </ul>
+
+  <h2>Projects</h2>
+  <ul>
+    {{ range .Site.RegularPages }}
+      {{ if eq .Type "projects" }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+
+  <!--<h2>Development Guide</h2>
+  <ul>
+    {{ range .Site.RegularPages }}
+      {{ if eq .Type "dev" }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+-->
