@@ -45,7 +45,7 @@ Loosely assign roles to different team members who will work on this project. Th
 
 ### Step 1: Make a Base Product
 
-Use the other guides in this wiki to set up an initial version of the project. It does not have to be too fancy, just something to build off of. 
+Use the other guides in this wiki to set up an initial version of the project. It does not have to be too fancy, just something to build off of.
 
 ### Step 2: Adjust and Detail
 
@@ -67,4 +67,4 @@ Sometimes, the administration will request that have the developers isolate them
 
 ### Step 3: Maintain
 
-If the server goes down, or some error occurs, be prepared to fix it. They may ask that you add features, so make sure to plan them out accordingly. 
+If the server goes down, or some error occurs, be prepared to fix it. They may ask that you add features, so make sure to plan them out accordingly.
