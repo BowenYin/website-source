@@ -4,7 +4,7 @@ Source code for Harker Dev website, built on [Hugo](https://gohugo.io/). View [d
 
 ## Development
 
-## Cloning and Install
+### Cloning and Install
 
 Install Hugo:
 
@@ -16,4 +16,4 @@ In the project directory, run `hugo server`. Then go to [http://localhost:1313/]
 
 ### Building
 
-To build a production version of the website, run `hugo` and it will create a production build in the `public` folder.
+To build a production version of the website, run `hugo` and it will create a production build in the `public` folder, which you can set as a git submodule to the repository [here](https://harkerdev.github.io/).
