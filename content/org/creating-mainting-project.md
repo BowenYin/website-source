@@ -17,7 +17,7 @@ The first step in making a HarkerDev project is catching the attention of the Ha
 
 ### Step 3: Create and Approve a Team
 
-Assemble a balanced and diverse team of volunteers to work on the project. Refer to our [[guide on approving a team|https://github.com/DJMcoder/HarkerDevGuides/wiki/Procedure-for-Approving-a-Team]] for how to approve this team with the administration.
+Assemble a balanced and diverse team of volunteers to work on the project.
 
 ### Step 4: Develop a Timeline
 
