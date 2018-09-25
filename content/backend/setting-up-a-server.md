@@ -41,23 +41,23 @@ In the production environment since performance matters we use more software to 
 
 1. Node.js
 
-We use Ubuntu as the OS. Node.js has a guide for installing Node.js on Ubuntu [here](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions).
+    We use Ubuntu as the OS. Node.js has a guide for installing Node.js on Ubuntu [here](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions).
 
 2. Nginx
 
-Nginx is a web server that can serve static content as well as act as a proxy. It is much more efficient than doing anything in Node.js, therefore we use it to serve the static content for the site, manage TLS, as well as proxy the Node.js code. For most software installation on the Development server, DigitalOcean always has very good guides. They happen to publish ones on installing Nginx, so to find the one relevant to your Ubuntu version search for something like "nginx install ubuntu" and find the relevant link. For example [here](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04) is the one for 16.04. Now for this guide because Harker has its own firewall and we don't host with DigitalOcean you can ignore the part with `ufw`. Pretty much all you need to do as of writing is `sudo apt-get update` and `sudo apt-get install nginx`.
+    Nginx is a web server that can serve static content as well as act as a proxy. It is much more efficient than doing anything in Node.js, therefore we use it to serve the static content for the site, manage TLS, as well as proxy the Node.js code. For most software installation on the Development server, DigitalOcean always has very good guides. They happen to publish ones on installing Nginx, so to find the one relevant to your Ubuntu version search for something like "nginx install ubuntu" and find the relevant link. For example [here](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-16-04) is the one for 16.04. Now for this guide because Harker has its own firewall and we don't host with DigitalOcean you can ignore the part with `ufw`. Pretty much all you need to do as of writing is `sudo apt-get update` and `sudo apt-get install nginx`.
 
 3. pm2
 
-Another thing that makes the application more performant in production is utilizing multiple cores. Node.js has ways to do this an the application, but pm2 makes this much easier and in facts prevents you from having to write any code for utilizing multiple cores. It also handle auto-restarting the application if there are any errors and saving log files. To install it follow the instructions [here](http://pm2.keymetrics.io/docs/usage/quick-start/#installation).
+    Another thing that makes the application more performant in production is utilizing multiple cores. Node.js has ways to do this an the application, but pm2 makes this much easier and in facts prevents you from having to write any code for utilizing multiple cores. It also handle auto-restarting the application if there are any errors and saving log files. To install it follow the instructions [here](http://pm2.keymetrics.io/docs/usage/quick-start/#installation).
 
 4. Certbot
 
-To prevent having to wait for Harker to give us SSL certificates, we use the Let's Encrypt service. In order to use it, we'll need an application for registering with said service. Again, DigitalOcean has a nice guide for this. As said before their guides are Ubuntu-version specific, but [here's](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04) the one for 16.04. You can skip the parts about setting up nginx and updating `ufw`. When you get to running the `certbot` commands, you'll need to have set up nginx and disabled https redirection (as we won't have a certificate yet). Make sure to complete the part titled "Updating Diffie-Hellman Parameters", but don't edit the config as that will already be handled. You'll also want to set up auto-renewal (which is covered in the guide).
+    To prevent having to wait for Harker to give us SSL certificates, we use the Let's Encrypt service. In order to use it, we'll need an application for registering with said service. Again, DigitalOcean has a nice guide for this. As said before their guides are Ubuntu-version specific, but [here's](https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-16-04) the one for 16.04. You can skip the parts about setting up nginx and updating `ufw`. When you get to running the `certbot` commands, you'll need to have set up nginx and disabled https redirection (as we won't have a certificate yet). Make sure to complete the part titled "Updating Diffie-Hellman Parameters", but don't edit the config as that will already be handled. You'll also want to set up auto-renewal (which is covered in the guide).
 
 5. MongoDB
 
-You can refer to [MongoDB's guide](https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/) for this.
+    You can refer to [MongoDB's guide](https://docs.mongodb.com/v3.0/tutorial/install-mongodb-on-ubuntu/) for this.
 
 ### Setup
 
@@ -71,5 +71,7 @@ You'll also need to clone the repo into the home folder. You'll need to set up S
 
 Use `sudo service mongod start` to start MongoDb, and `pm2 start app.js -i 0 --name "app"` (assuming `app.js` is the main file and you're in the directory you cloned) to start the main application for the first time. Later you can just use `pm2 start app`.
 
-#3# Backups
+### Backups
 Consider viewing [[this tutorial|https://github.com/DJMcoder/HarkerDevGuides/wiki/Creating-Backup-Procedures]] for an in-depth guide on creating a backup procedure.
+
+<br><br>

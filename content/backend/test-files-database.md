@@ -5,9 +5,11 @@ date: 2018-09-24
 
 Testing often requires a populated database to work with. This tutorial explains how to write a write scripts which populate the database with test documents specified in files you will create.
 
-# Setup
+## Setup
+
 Make sure that MongoDB is set up and `mongod` is running. Review the structure of your collections. For this tutorial, we will be using users as our example, with the following schema:
-```javascript
+
+{{< highlight js >}}
 const mongoose = require('../db');
 
 // Format of the mongoDB collection
@@ -29,33 +31,43 @@ const userSchema = mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;
-```
+{{< / highlight >}}
 
-# Creating DB Test files
+## Creating DB Test files
+
 In your repository folder, create a new folder titled `DatabaseTestFiles`. In this folder, create a new file called `UserTest.json`. Line by line, create a new instance of a user. Here is an example:
-```javascript
+
+{{< highlight json >}}
 {"fullName":"John Doe","username":"19johnd"}
 {"fullName":"Mary Molly","username":"17marym"}
-```
+{{< / highlight >}}
+
 Note the lack of commas between objects.
 
-### A note on implementation
+#### A note on implementation
+
 We are only using a model with two String fields. More models and fields could be added in the same fashion. If a reference field is added, there are two possibilities that could be implemented. The first would be to generate the ids in the database test files, and then reference those ids them in the other document. The other would be to generate documents for both collections separately, then randomly pair them together (depending on the direction of the reference). 
 
-# Creating scripts
+## Creating scripts
+
 If it does not already exist, add a folder to your repository folder titled `scripts`.
-## Unpopulate script
+
+### Unpopulate script
+
 In your `scripts` folder, add a file titled `unpopulate.js`.
 Add the following `require` block to the beginning of your code:
-```javascript
+
+{{< highlight js >}}
 const fs = require('fs');
 const readline = require('readline');
 const mongoose = require('../db');
 const User = require('../models/user');
-```
+{{< / highlight >}}
+
 If you were to add another model to the populate script, you would add its `require` reference here.
 Then, add the `parseUsers` function. 
-```javascript
+
+{{< highlight js >}}
 function parseUsers() {
   return new Promise((resolve, reject) => {
     const mongoTransactions = [];
@@ -83,40 +95,49 @@ function parseUsers() {
     });
   });
 }
-```
+{{< / highlight >}}
+
 If you wanted to reference another model in User, for example 'Groceries', you would make a new, similar function but called `deleteGroceriesOfUsers` and which would take the parameter `user` and delete all of the groceries that that user referenced. Then, directly after this code block:
-```javascript
+
+{{< highlight js >}}
 .then((user) => {
   if (!user) throw new Error(`User ith username ${JSON.parse(data).username} does not exist`);
   return user;
 })
-```
+{{< / highlight >}}
+
 Add another `.then()` statement as so:
-```javascript
+
+{{< highlight js >}}
 .then(user => { deleteGroceriesOfUser(user) })
-```
+{{< / highlight >}}
+
 Finally, at the end of the script, add this execution statement:
-```javascript
+
+{{< highlight js >}}
 if (module.parent) {
   module.exports = parseUsers();
 } else {
   parseUsers().then(mongoose.disconnect);
 }
-```
+{{< / highlight >}}
+
 This checks to see if this code is being run by another script, which will be important for the `populate.js` script.
-## Populate script
-In your `scripts` folder, add a file titled `populate.js`.
-Add the following `require` block to the beginning of your code:
-```javascript
+
+### Populate script
+
+In your `scripts` folder, add a file titled `populate.js`. Add the following `require` block to the beginning of your code:
+
+{{< highlight js >}}
 const fs = require('fs');
 const readline = require('readline');
 const mongoose = require('../db');
 const User = require('../models/user');
-```
-If you were to add another model to the populate script, you would add its `require` reference here.
+{{< / highlight >}}
 
-Then, add the `parseUsers` function:
-```javascript
+If you were to add another model to the populate script, you would add its `require` reference here. Then, add the `parseUsers` function:
+
+{{< highlight js >}}
 function parseUsers() {
   const mongoTransactions = [];
   const users = [];
@@ -135,20 +156,26 @@ function parseUsers() {
     );
   });
 }
-```
-This function goes line-by-line through the database test file and creates a new document for each. 
+{{< / highlight >}}
+
+This function goes line-by-line through the database test file and creates a new document for each.
 
 If you wanted to reference another model in User, for example 'Groceries', you would make a new, similar function but called `parseGroceries` and which would take the parameter `users`. Then, append the following code inside of the `parseUsers` function:
-```javascript
+
+{{< highlight js >}}
 userRl.on('close', () => {
   Promise.all(mongoTransactions).then(users => {
     parseGroceries(users);
   });
 });
-```
+{{< / highlight >}}
 
 Finally, at the end of your code, add this statement:
-```javascript
+
+{{< highlight js >}}
 require('./unpopulate').then(parseUsers);
-```
+{{< / highlight >}}
+
 This makes sure that the database is depopulated before repopulating it. 
+
+<br><br>
