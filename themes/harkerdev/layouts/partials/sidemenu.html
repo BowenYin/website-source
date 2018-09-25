@@ -21,12 +21,32 @@
     {{ end }}
   </ul>
 
-  <!--<h2>Development Guide</h2>
+  <h2>Development Guide</h2>
+
+  <h2>Organization</h2>
   <ul>
     {{ range .Site.RegularPages }}
-      {{ if eq .Type "dev" }}
+      {{ if eq .Type "org" }}
         <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
       {{ end }}
     {{ end }}
   </ul>
--->
+
+  <h2>Front End</h2>
+  <ul>
+    {{ range .Site.RegularPages }}
+      {{ if eq .Type "frontend" }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+
+  <h2>Back End</h2>
+  <ul>
+    {{ range .Site.RegularPages }}
+      {{ if eq .Type "backend" }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    {{ end }}
+  </ul>
+  
