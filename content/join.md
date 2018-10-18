@@ -15,4 +15,4 @@ We all start somewhere — we love to help mentor students who are passionate ab
 
 ### How to Apply
 
-Apply by filling out the form at [tiny.cc/joinharkerdev](tiny.cc/joinharkerdev).
+Apply by filling out the form at [tiny.cc/joinharkerdev](https://tiny.cc/joinharkerdev).
