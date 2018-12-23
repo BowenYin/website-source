@@ -72,6 +72,7 @@ variables:
   DOCKER_DRIVER: overlay2
   
   TEST_DISABLED: "true"
+  CODE_QUALITY_DISABLED: "true"
 
 stages:
   - build
