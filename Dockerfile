@@ -1,5 +1,8 @@
 FROM nginx
 
 RUN apt-get update && apt-get install -y hugo
+
+WORKDIR /src
+COPY . /src
 RUN hugo
-COPY public /usr/share/nginx/html
+RUN cp -r public/* /usr/share/nginx/html
