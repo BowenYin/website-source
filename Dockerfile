@@ -1,4 +1,4 @@
-FROM nginx-alpine
+FROM nginx:alpine
 
 RUN apk add --no-cache hugo
 RUN hugo version
