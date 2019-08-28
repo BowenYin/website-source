@@ -4,7 +4,7 @@ date: 2018-12-1
 ---
 <br />
 
-## We are a small group of students dedicated to making Harker student and faculty life easier through development.
+## We are a small group of students dedicated to making Harker student and faculty life easier through software development.
 
 ### What do you do?
 We use our passion for computer science to deliver a wide range of highly optimized and user-friendly projects, including websites and iOS apps, designed for The Harker School community.
