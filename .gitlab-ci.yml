@@ -95,7 +95,6 @@ build:
   services:
   - docker:stable-dind
   script:
-    - "while true ; do sleep 1; done"
     - setup_docker
     - build
   only:
